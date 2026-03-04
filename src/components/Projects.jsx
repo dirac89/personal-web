@@ -44,11 +44,11 @@ const Projects = () => {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="block bg-white border-2 border-green-500 rounded-lg p-6 shadow-lg hover:shadow-xl transition transform hover:scale-105"
+            className="block bg-white border-2 border-emerald-600 rounded-lg p-6 shadow-lg hover:shadow-xl transition transform hover:scale-105"
           >
             <div className="flex items-center justify-between mb-2">
-              <h3 className="text-xl font-bold text-green-700">{project.title}</h3>
-              <FaGithub size={20} className="text-green-600" />
+              <h3 className="text-xl font-bold text-emerald-700">{project.title}</h3>
+              <FaGithub size={20} className="text-emerald-600" />
             </div>
             <p className="text-sm text-gray-600 mb-4">{project.description}</p>
             <div className="flex flex-wrap gap-2">

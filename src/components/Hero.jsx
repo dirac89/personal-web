@@ -1,24 +1,26 @@
 // src/components/Hero.jsx
 import { motion } from "framer-motion";
-import profile from "../assets/profile.jpg";
+import profile from "../assets/profile_javier_new.png";
 import getExperienceYears from "../utils/getExperienceYears";
 import AnimatedCounter from "./AnimatedCounter";
 import projects from "../data/projects";
-
 
 const Hero = () => {
   const experienceYears = getExperienceYears();
   const deliveredSolutions = projects.length;
 
   return (
-    <section id="inicio" className="min-h-screen bg-gray-900 text-white flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-16">
+    <section
+      id="inicio"
+      className="min-h-screen bg-gray-900 text-white flex flex-col md:flex-row items-center justify-between px-8 md:px-20 pt-0 pb-16 relative overflow-hidden"
+    >
       {/* Text column */}
-      <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+      <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0 z-10">
         <motion.p
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-green-500 uppercase tracking-wide text-sm mb-2"
+          className="text-emerald-600 uppercase tracking-wide text-sm mb-2"
         >
           Introduction
         </motion.p>
@@ -45,7 +47,7 @@ const Hero = () => {
           href="#proyectos"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="inline-block bg-green-600 text-white px-6 py-3 rounded font-semibold shadow hover:bg-green-700 transition"
+          className="inline-block bg-emerald-600 text-white px-6 py-3 rounded font-semibold shadow hover:bg-emerald-700 transition"
         >
           Latest Projects
         </motion.a>
@@ -63,15 +65,26 @@ const Hero = () => {
       </div>
 
       {/* Image section */}
-      <div className="md:w-1/2 flex justify-center relative mt-10 md:mt-0">
-        <div className="relative z-10 w-64 h-64 rounded-full overflow-hidden border-4 border-green-500">
-          <img src={profile} alt="Javier Aguilera" className="w-full h-full object-cover" />
+      <div className="md:w-1/2 flex justify-center items-start relative mt-10 md:-mt-64">
+        {/* Background circles */}
+        <div className="absolute w-[500px] h-[500px] bg-emerald-600 rounded-full top-32 left-10 z-0 opacity-60 blur-xl"></div>
+        <div className="absolute w-[450px] h-[450px] bg-blue-900 rounded-full bottom-10 right-10 z-0 opacity-70 blur-2xl"></div>
+        
+        <div className="relative w-[700px] h-[1000px] overflow-hidden z-10">
+          <img 
+            src={profile} 
+            alt="Javier Aguilera" 
+            className="w-full h-full object-cover object-center shadow-2xl" 
+            style={{ 
+              objectPosition: 'center top',
+              transform: 'scale(1.1)',
+              clipPath: 'circle(50% at 50% 50%)'
+            }}
+          />
         </div>
-        <div className="absolute w-72 h-72 bg-blue-700 rounded-full top-4 left-10 -z-0 blur-xl opacity-30"></div>
-        <div className="absolute w-64 h-64 border-4 border-yellow-400 rounded-full bottom-0 right-8 -z-0 animate-pulse"></div>
       </div>
     </section>
   );
 };
 
-    export default Hero;
+export default Hero;

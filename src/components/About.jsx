@@ -8,14 +8,14 @@ const timelineData = [
     year: "2018 - 2022",
     title: "Air Europa Airlines",
     description: "Joined as a Data Scientist focusing on forecasting and pricing optimization.",
-    icon: <FaPlaneDeparture className="text-green-600" size={18} />,
+    icon: <FaPlaneDeparture className="text-emerald-600" size={18} />,
   },
 
   {
     year: "2022 - 2023",
     title: "Strategy Big Data",
     description: "Joined as a Senior Data Scientist focusing on time series forecasting and recommender models.",
-    icon: <FaPlaneDeparture className="text-green-600" size={18} />,
+    icon: <FaPlaneDeparture className="text-emerald-600" size={18} />,
   },
 
 //   {
@@ -26,7 +26,7 @@ const timelineData = [
     year: "2023 - Present",
     title: "Knowmad Mood (Client: Iberia - IAG Group)",
     description: "Senior Data Scientist working on machine learning, MLOps and revenue management solutions.",
-    icon: <FaPlaneArrival className="text-green-600" size={18} />,
+    icon: <FaPlaneArrival className="text-emerald-600" size={18} />,
   },
 ];
 
@@ -58,18 +58,18 @@ const About = () => {
           About Me
         </motion.h2>
 
-        <div className="relative border-l-4 border-green-500 ml-4">
+        <div className="relative border-l-4 border-emerald-600 ml-4">
           {timelineData.map((item, index) => (
             item.gap ? (
               <div
                 key={index}
                 className="relative mb-10 ml-6 text-gray-500 text-sm italic flex items-center gap-2"
               >
-                <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                <div className="w-2 h-2 rounded-full bg-emerald-600"></div>
                 <div className="border-t border-dashed border-gray-400 flex-grow h-px mt-1"></div>
                 <span>{item.label}</span>
                 <div className="border-t border-dashed border-gray-400 flex-grow h-px mt-1"></div>
-                <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                <div className="w-2 h-2 rounded-full bg-emerald-600"></div>
               </div>
             ) : (
               <motion.div
@@ -84,12 +84,12 @@ const About = () => {
                   hoveredIndex !== null && hoveredIndex !== index ? "opacity-40" : "opacity-100"
                 }`}
               >
-                <div className="absolute w-4 h-4 bg-green-500 rounded-full -left-2.5 top-1 flex items-center justify-center">
+                <div className="absolute w-4 h-4 bg-emerald-600 rounded-full -left-2.5 top-1 flex items-center justify-center">
                   {item.icon || null}
                 </div>
                 <h3
                   className={`text-xl font-semibold mt-0 mb-1 transition-colors duration-300 ${
-                    hoveredIndex === index ? "text-green-600" : "text-gray-800"
+                    hoveredIndex === index ? "text-emerald-600" : "text-gray-800"
                   }`}
                 >
                   {item.year} : {item.title}
@@ -105,14 +105,14 @@ const About = () => {
             href="/CV_Javier_Aguilera.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-green-600 text-white px-6 py-3 rounded font-semibold shadow hover:bg-green-700 transition"
+            className="inline-block bg-emerald-600 text-white px-6 py-3 rounded font-semibold shadow hover:bg-emerald-700 transition"
           >
             Download CV
           </a>
           <br />
           <a
             href="#contact"
-            className="inline-block border-2 border-green-600 text-green-600 px-6 py-3 rounded font-semibold hover:bg-green-600 hover:text-white transition"
+            className="inline-block border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded font-semibold hover:bg-emerald-600 hover:text-white transition"
           >
             Let’s Connect
           </a>

@@ -6,8 +6,8 @@ const NavbarFloating = () => {
   const active = useActiveSection(["inicio", "proyectos", "about", "contact"]);
 
   const linkStyle = (id) =>
-    `text-gray-600 hover:text-green-600 transition ${
-      active === id ? "text-green-600 scale-110" : ""
+    `text-gray-600 hover:text-emerald-600 transition ${
+      active === id ? "text-emerald-600 scale-110" : ""
     }`;
 
   return (
