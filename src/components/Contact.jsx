@@ -16,8 +16,9 @@ const Contact = () => {
         </motion.h2>
 
         <form
-          action="https://formspree.io/f/{your_form_id}" // Replace with your Formspree ID
+          action="mailto:aguilerajavier58@gmail.com"
           method="POST"
+          encType="text/plain"
           className="space-y-6"
         >
           <div>

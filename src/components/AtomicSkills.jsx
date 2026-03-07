@@ -2,18 +2,17 @@
 import { motion } from "framer-motion";
 import {
   SiPython,
-  SiAmazonaws,
   SiAmazonredshift,
   SiApacheairflow
 } from "react-icons/si";
-import { FaBrain } from "react-icons/fa";
+import { FaBrain, FaAws } from "react-icons/fa";
 import { TbSettingsAutomation } from "react-icons/tb";
 import { BiBarChartAlt2 } from "react-icons/bi";
 import { GiArtificialIntelligence } from "react-icons/gi";
 
 const skills = [
   { icon: <SiPython size={28} />, name: "Python" },
-  { icon: <SiAmazonaws size={28} />, name: "AWS" },
+  { icon: <FaAws size={28} />, name: "AWS" },
   { icon: <SiAmazonredshift size={28} />, name: "Redshift" },
   { icon: <SiApacheairflow size={28} />, name: "Airflow" },
   { icon: <FaBrain size={28} />, name: "Machine Learning" },

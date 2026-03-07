@@ -1,5 +1,6 @@
 // src/components/Hero.jsx
 import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
 import profile from "../assets/profile_javier_new.png";
 import getExperienceYears from "../utils/getExperienceYears";
 import AnimatedCounter from "./AnimatedCounter";
@@ -43,14 +44,24 @@ const Hero = () => {
           Senior Data Scientist based in Spain. I specialize in Machine Learning, MLOps and Dynamic Pricing solutions for airlines and tech-driven businesses.
         </motion.p>
 
-        <motion.a
-          href="#proyectos"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-block bg-emerald-600 text-white px-6 py-3 rounded font-semibold shadow hover:bg-emerald-700 transition"
-        >
-          Latest Projects
-        </motion.a>
+        <div className="flex flex-wrap gap-3 mt-0">
+          <motion.a
+            href="#proyectos"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block bg-emerald-600 text-white px-6 py-3 rounded font-semibold shadow hover:bg-emerald-700 transition"
+          >
+            Latest Projects
+          </motion.a>
+          <a
+            href="https://github.com/dirac89"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded font-semibold hover:bg-emerald-600 hover:text-white transition"
+          >
+            <FaGithub size={20} /> <span>GitHub</span>
+          </a>
+        </div>
 
         <div className="flex gap-10 text-sm text-gray-300 mt-10 justify-center md:justify-start">
           <div className="text-center">
