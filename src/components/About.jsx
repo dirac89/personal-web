@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { FaPlaneDeparture, FaPlaneArrival } from "react-icons/fa";
 import { useState } from "react";
 import AtomicSkills from "./AtomicSkills";
-import profile from "../assets/profile_javier_new.png";
 
 const timelineData = [
   {
@@ -104,7 +103,7 @@ const About = () => {
 
         <div className="mt-12">
           <h3 className="text-2xl font-bold text-gray-800 text-center mb-6">Tech Stack</h3>
-          <AtomicSkills profile={profile} />
+          <AtomicSkills />
         </div>
 
         <div className="mt-16 text-center space-y-4">

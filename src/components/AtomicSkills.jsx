@@ -3,59 +3,91 @@ import { motion } from "framer-motion";
 import {
   SiPython,
   SiAmazonredshift,
-  SiApacheairflow
+  SiApacheairflow,
+  SiPostgresql,
 } from "react-icons/si";
-import { FaBrain, FaAws } from "react-icons/fa";
+import { FaAws } from "react-icons/fa";
+import { FaBrain } from "react-icons/fa";
 import { TbSettingsAutomation } from "react-icons/tb";
 import { BiBarChartAlt2 } from "react-icons/bi";
 import { GiArtificialIntelligence } from "react-icons/gi";
 
-const skills = [
-  { icon: <SiPython size={28} />, name: "Python" },
-  { icon: <FaAws size={28} />, name: "AWS" },
-  { icon: <SiAmazonredshift size={28} />, name: "Redshift" },
-  { icon: <SiApacheairflow size={28} />, name: "Airflow" },
-  { icon: <FaBrain size={28} />, name: "Machine Learning" },
-  { icon: <TbSettingsAutomation size={28} />, name: "MLOps" },
-  { icon: <BiBarChartAlt2 size={28} />, name: "Data Viz" },
-  { icon: <GiArtificialIntelligence size={28} />, name: "Deep Learning" },
+const categories = [
+  {
+    label: "Languages",
+    skills: [
+      { icon: <SiPython size={24} />, name: "Python" },
+      { icon: <SiPostgresql size={24} />, name: "SQL" },
+    ],
+  },
+  {
+    label: "Cloud",
+    skills: [
+      { icon: <FaAws size={24} />, name: "AWS" },
+      { icon: <SiAmazonredshift size={24} />, name: "Redshift" },
+    ],
+  },
+  {
+    label: "ML / AI",
+    skills: [
+      { icon: <FaBrain size={24} />, name: "Machine Learning" },
+      { icon: <GiArtificialIntelligence size={24} />, name: "Deep Learning" },
+    ],
+  },
+  {
+    label: "Tools",
+    skills: [
+      { icon: <SiApacheairflow size={24} />, name: "Airflow" },
+      { icon: <TbSettingsAutomation size={24} />, name: "MLOps" },
+      { icon: <BiBarChartAlt2 size={24} />, name: "Data Viz" },
+    ],
+  },
 ];
 
-const radii = [100, 140];
-const angleStep = (2 * Math.PI) / skills.length;
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
 
-const AtomicSkills = ({ profile }) => {
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+};
+
+const AtomicSkills = () => {
   return (
-    <div className="relative h-[400px] w-full flex items-center justify-center">
-      {/* Foto central */}
-      <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <img src={profile} alt="Profile" className="w-full h-full object-cover" />
-      </div>
-
-      {/* Skills orbitando en distintas capas */}
-      {radii.map((radius, rIdx) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {categories.map((cat, ci) => (
         <motion.div
-          key={rIdx}
-          animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, duration: 25 - rIdx * 5, ease: "linear" }}
-          className="absolute top-1/2 left-1/2 w-[400px] h-[400px] -translate-x-1/2 -translate-y-1/2"
+          key={cat.label}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="bg-white rounded-xl shadow-sm border border-gray-100 p-5"
         >
-          {skills.map((skill, i) => {
-            const angle = i * angleStep + (rIdx === 1 ? angleStep / 2 : 0);
-            const x = radius * Math.cos(angle);
-            const y = radius * Math.sin(angle);
-            return (
-              <div
-                key={`${skill.name}-${rIdx}`}
-                className="absolute flex flex-col items-center text-sm font-semibold bg-white text-black p-2 rounded shadow w-16 h-16 justify-center"
-                style={{
-                  transform: `translate(${x}px, ${y}px)`
-                }}
+          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600 mb-4">
+            {cat.label}
+          </p>
+          <div className="flex flex-col gap-3">
+            {cat.skills.map((skill) => (
+              <motion.div
+                key={skill.name}
+                variants={cardVariants}
+                whileHover={{ x: 4 }}
+                className="flex items-center gap-3 text-gray-700 group cursor-default"
               >
-                {skill.icon}
-              </div>
-            );
-          })}
+                <span className="text-emerald-600 group-hover:scale-110 transition-transform">
+                  {skill.icon}
+                </span>
+                <span className="text-sm font-medium">{skill.name}</span>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       ))}
     </div>
