@@ -1,4 +1,7 @@
 // src/data/projects.js
+import bgDynamicPricing from "../assets/bg_pricing_aviation.png";
+import bgFlightDemand from "../assets/bg_demand_aviation.png";
+import bgSeatAllocation from "../assets/bg_seating_aviation.png";
 
 const projects = [
   {
@@ -8,6 +11,7 @@ const projects = [
     tech: ["Python", "AWS", "Machine Learning", "API"],
     github: "https://github.com/dirac89/dynamic-pricing-model",
     featured: true,
+    bgImage: bgDynamicPricing,
   },
   {
     title: "Flight Demand Forecasting",
@@ -16,6 +20,7 @@ const projects = [
     tech: ["Redshift", "Airflow", "MLOps"],
     github: "https://github.com/dirac89/flight-demand-forecasting",
     featured: true,
+    bgImage: bgFlightDemand,
   },
   {
     title: "Seat Allocation Recommender",
@@ -24,6 +29,7 @@ const projects = [
     tech: ["Python", "Data Viz", "Deep Learning"],
     github: "https://github.com/dirac89/recommender-model/tree/main",
     featured: true,
+    bgImage: bgSeatAllocation,
   },
   {
     title: "Clustering for Route Segmentation",
