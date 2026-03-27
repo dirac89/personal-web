@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar';
+import HeroScroll from './components/HeroScroll';
 import AviationJourney from './components/AviationJourney';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <HeroScroll />
       <AviationJourney />
       <Projects />
       <Contact />
